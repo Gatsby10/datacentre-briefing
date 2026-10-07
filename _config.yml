@@ -1,0 +1,8 @@
+title: Bubble or Buildout
+tagline: Weekly intelligence on AI data centres and networking
+description: A weekly, sourced briefing on AI data centre capacity, power, cooling, chips and networking, and whether the evidence points to a bubble or a buildout.
+url: https://gatsby10.github.io
+baseurl: /datacentre-briefing
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+exclude: [README.md]

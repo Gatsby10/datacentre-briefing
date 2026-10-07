@@ -1,0 +1,25 @@
+:root{--bg:#fbfaf7;--fg:#1c1d1f;--muted:#666b73;--line:#e3e0d8;--accent:#b4451f}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e9e7e2;--muted:#9a9ea6;--line:#2b2d31;--accent:#f08a5d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.65 Georgia,"Times New Roman",serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.site{border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
+.brand{font-weight:700;font-size:1.15rem;color:var(--fg);text-decoration:none;letter-spacing:-.01em}
+nav a{font:15px/1 system-ui,sans-serif;color:var(--muted);text-decoration:none;margin-left:18px}
+nav a:first-child{margin-left:0}
+a{color:var(--accent)}
+main{padding-top:40px;padding-bottom:56px}
+h1{font-size:2.1rem;line-height:1.2;margin:0 0 .5em;letter-spacing:-.02em}
+h2{font-size:1.35rem;line-height:1.3;margin:2em 0 .4em}
+.hero{margin-bottom:40px}
+.lede{font-size:1.15rem;color:var(--muted);margin-top:0}
+.meta{font:14px/1.4 system-ui,sans-serif;color:var(--muted);margin:0 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.posts{list-style:none;padding:0;margin:0}
+.posts li{padding:24px 0;border-top:1px solid var(--line)}
+.posts h2{margin:0 0 .3em}
+.posts h2 a{color:var(--fg);text-decoration:none}
+.posts h2 a:hover{color:var(--accent)}
+.posts p{margin:0}
+.back{margin-top:48px;font:15px system-ui,sans-serif}
+footer{border-top:1px solid var(--line);padding-top:24px;padding-bottom:40px;font:14px/1.5 system-ui,sans-serif;color:var(--muted)}
