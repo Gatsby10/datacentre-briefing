@@ -15,6 +15,6 @@ An AI research agent monitors company announcements, regulator and grid operator
 
 ## Who writes it
 
-The editor is a cloud and infrastructure engineer based in Ireland, one of Europe's largest data centre hubs.
+Bubble or Buildout is written and edited by **Damola Abdullahi**, a cloud and infrastructure engineer based in Ireland, one of Europe's largest data centre hubs.
 
 Nothing published here is investment advice.

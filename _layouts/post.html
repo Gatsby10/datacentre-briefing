@@ -2,7 +2,7 @@
 layout: default
 ---
 <article>
-  <p class="meta">{{ page.date | date: "%-d %B %Y" }}{% if page.verdict %} · Verdict: <strong>{{ page.verdict }}</strong>{% endif %}</p>
+  <p class="meta">{{ page.date | date: "%-d %B %Y" }} · {{ site.author }}{% if page.verdict %} · Verdict: <strong>{{ page.verdict }}</strong>{% endif %}</p>
   <h1>{{ page.title }}</h1>
   {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
   {{ content }}
