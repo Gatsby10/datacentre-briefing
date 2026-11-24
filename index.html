@@ -1,16 +1,39 @@
 ---
 layout: default
 ---
+{% assign judged = site.posts | where_exp: "p", "p.verdict" %}
 <section class="hero">
-  <h1>{{ site.title }}</h1>
-  <p class="lede">{{ site.tagline }}. Each issue ends with a verdict on what the week's evidence says.</p>
+  <h1>Is the AI data centre boom a bubble or a buildout?</h1>
+  <p class="lede">Every Monday, the week's news on capacity, power, cooling, chips and networking, checked against its sources and ending with a verdict.</p>
+  <div class="ledger" aria-label="Verdicts so far">
+    <div class="ledger-strip">
+      {% for p in judged reversed %}
+      <a class="cell cell-{{ p.verdict | downcase }}" href="{{ p.url | relative_url }}" title="{{ p.date | date: '%-d %b %Y' }}: {{ p.verdict }}"><span class="sr">{{ p.date | date: '%-d %b %Y' }}: {{ p.verdict }}</span></a>
+      {% endfor %}
+      {% assign open = 26 | minus: judged.size %}
+      {% if open > 0 %}{% for i in (1..open) %}<span class="cell cell-open" aria-hidden="true"></span>{% endfor %}{% endif %}
+    </div>
+    <p class="ledger-key">
+      <span class="count">{% if judged.size == 0 %}Each square will hold one week's verdict, starting with the first issue.{% else %}{{ judged.size }} week{% if judged.size != 1 %}s{% endif %} judged so far.{% endif %}</span>
+      <span class="key key-buildout">Buildout</span>
+      <span class="key key-mixed">Mixed</span>
+      <span class="key key-bubble">Bubble</span>
+    </p>
+  </div>
 </section>
-<ul class="posts">
-{% for post in site.posts %}
-  <li>
-    <p class="meta">{{ post.date | date: "%-d %B %Y" }}{% if post.verdict %} · {{ post.verdict }}{% endif %}</p>
-    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
-  </li>
-{% endfor %}
-</ul>
+
+<section class="issues" aria-labelledby="issues-title">
+  <h2 id="issues-title">Briefings</h2>
+  <ol class="issue-list">
+  {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      <div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+      </div>
+      {% if post.verdict %}{% include verdict.html verdict=post.verdict %}{% endif %}
+    </li>
+  {% endfor %}
+  </ol>
+</section>

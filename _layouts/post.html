@@ -1,10 +1,23 @@
 ---
 layout: default
 ---
-<article>
-  <p class="meta">{{ page.date | date: "%-d %B %Y" }} · {{ site.author }}{% if page.verdict %} · Verdict: <strong>{{ page.verdict }}</strong>{% endif %}</p>
-  <h1>{{ page.title }}</h1>
-  {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+<article class="issue">
+  <header class="issue-head">
+    <p class="issue-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>, {{ site.author }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+    {% if page.verdict %}
+    <div class="verdict-panel verdict-panel-{{ page.verdict | downcase }}">
+      <span>This week's verdict</span>
+      <strong>{{ page.verdict }}</strong>
+    </div>
+    {% endif %}
+  </header>
+  <div class="prose">
   {{ content }}
+  </div>
 </article>
-<p class="back"><a href="{{ '/' | relative_url }}">← All briefings</a></p>
+<aside class="after-issue">
+  <p>New issues every Monday. <a href="{{ site.linkedin }}">Follow on LinkedIn</a> or subscribe to the <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a>.</p>
+  <p><a href="{{ '/' | relative_url }}">All briefings</a></p>
+</aside>

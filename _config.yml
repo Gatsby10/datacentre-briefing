@@ -1,9 +1,13 @@
 title: Bubble or Buildout
-author: Damola Abdullahi
 tagline: Weekly intelligence on AI data centres and networking
-description: A weekly, sourced briefing on AI data centre capacity, power, cooling, chips and networking, and whether the evidence points to a bubble or a buildout.
+description: A weekly, sourced briefing on AI data centre capacity, power, cooling, chips and networking, and whether each week's evidence points to a bubble or a buildout.
+author: Damola Abdullahi
+linkedin: https://www.linkedin.com/in/dam-a-52796a176/
 url: https://gatsby10.github.io
 baseurl: /datacentre-briefing
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 exclude: [README.md]

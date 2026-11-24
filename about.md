@@ -3,6 +3,8 @@ layout: default
 title: About
 permalink: /about/
 ---
+<div class="prose page" markdown="1">
+
 # About
 
 **Bubble or Buildout** is a weekly briefing on the AI infrastructure boom: data centre capacity, power and grid, cooling, chips, networking, and the money behind them.
@@ -18,3 +20,5 @@ An AI research agent monitors company announcements, regulator and grid operator
 Bubble or Buildout is written and edited by **Damola Abdullahi**, a cloud and infrastructure engineer based in Ireland, one of Europe's largest data centre hubs.
 
 Nothing published here is investment advice.
+
+</div>
